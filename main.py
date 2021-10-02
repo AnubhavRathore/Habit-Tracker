@@ -2,8 +2,8 @@ import requests
 from datetime import datetime
 
 pixela_endpoint = "https://pixe.la/v1/users"
-USERNAME = "anubhav"
-TOKEN = "HJBShjbjhbJvGVGvgVG"
+USERNAME = "Your user_name"
+TOKEN = "Your Token Key"
 GRAPH_ID = "graph1"
 
 user_params = {
@@ -30,17 +30,12 @@ graph_config = {
     "type": "float",
     "color": "shibafu",
 }
-# response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-# print(response.text)
 
 pixel_creation_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
 today = datetime.now()
-# print(today.strftime("%Y%m%d"))
 
 """For yesterday"""
-# today = datetime(year=2021, month=5, day=28)
-
 pixel_data = {
     "date": today.strftime("%Y%m%d"),
     # "quantity": "4.2",
@@ -58,18 +53,9 @@ new_pixel_data = {
     "quantity": "3.1",
 }
 
-# response = requests.put(url=update_endpoint, json=new_pixel_data, headers=headers)
-# print(response.text)
 
 """Deleting a pixel using Delete Method."""
 
 delete_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{today.strftime('%Y%m%d')}"
-
-# response = requests.delete(url=delete_endpoint, headers=headers)
-# print(response.text)
-
-
-
-
 
 
