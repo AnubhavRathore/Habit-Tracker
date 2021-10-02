@@ -13,10 +13,6 @@ user_params = {
     "notMinor": "yes",
 }
 
-# response = requests.post(url="pixela_endpoint", json=user_params)
-# # response.raise_for_status()
-# print(response.text)
-
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
 headers = {
@@ -38,7 +34,6 @@ today = datetime.now()
 """For yesterday"""
 pixel_data = {
     "date": today.strftime("%Y%m%d"),
-    # "quantity": "4.2",
     "quantity": input("How many hours did you code today?"),
 }
 
@@ -57,5 +52,3 @@ new_pixel_data = {
 """Deleting a pixel using Delete Method."""
 
 delete_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{today.strftime('%Y%m%d')}"
-
-
